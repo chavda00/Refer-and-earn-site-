@@ -3,86 +3,106 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Refer & Earn ₹50</title>
+  <title>SUN CRYPTO - Refer & Earn</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #56ccf2, #2f80ed);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
       margin: 0;
-      padding: 20px;
+      font-family: 'Arial', sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
     .container {
-      background: #ffffff22;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      max-width: 400px;
-      width: 100%;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      max-width: 380px;
       text-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
-    input[type="text"] {
-      padding: 10px;
-      border: none;
-      border-radius: 8px;
+    .logo {
+      width: 70px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 24px;
+      margin: 5px 0;
+    }
+    p {
+      margin: 8px 0;
+      color: #333;
+    }
+    input {
       width: 100%;
-      margin-bottom: 20px;
-      font-size: 16px;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
     }
     button {
-      padding: 12px 20px;
+      width: 100%;
+      padding: 12px;
+      background: #007bff;
+      color: white;
       font-size: 16px;
-      background-color: #fff;
-      color: #2f80ed;
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      transition: 0.3s;
     }
     button:hover {
-      background-color: #f2f2f2;
+      background: #0056b3;
     }
-    .message {
-      margin-top: 15px;
+    .steps {
+      text-align: left;
       font-size: 14px;
-      color: #fffa;
+      margin-top: 20px;
+      color: #444;
+    }
+    .steps li {
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>🎉 Refer & Earn ₹50</h2>
-    <p>Enter your UPI ID to get started</p>
-    <input type="text" id="upiInput" placeholder="example@upi" />
-    <button onclick="submitUPI()">Get ₹50</button>
-    <p class="message" id="message"></p>
+    <img src="https://i.imgur.com/s4j8kRQ.png" alt="Logo" class="logo" />
+    <h1>SUN CRYPTO</h1>
+    <p><strong>GET ₹300 INSTANTLY</strong></p>
+    <p>Refer Code: <strong id="refCode">GNb5pLLdIO2h3Je</strong></p>
+
+    <input type="text" id="upi" placeholder="Enter your UPI ID" required />
+    <input type="text" id="whatsapp" placeholder="Enter your WhatsApp number" required />
+    
+    <button onclick="submitForm()">Submit</button>
+
+    <div class="steps">
+      <p><strong>How to earn ₹300?</strong></p>
+      <ol>
+        <li>Enter your UPI ID and WhatsApp number.</li>
+        <li>Click Submit and install the SUN CRYPTO app.</li>
+        <li>Complete your profile and KYC verification.</li>
+        <li>Do at least ₹10 small trade.</li>
+        <li>You will receive ₹300 cashback instantly.</li>
+      </ol>
+    </div>
   </div>
 
   <script>
-    function submitUPI() {
-      const upi = document.getElementById('upiInput').value.trim();
-      const message = document.getElementById('message');
+    function submitForm() {
+      const upi = document.getElementById("upi").value;
+      const whatsapp = document.getElementById("whatsapp").value;
 
-      // Simple UPI ID validation
-      const upiRegex = /^[\w.-]+@[\w.-]+$/;
-
-      if (!upiRegex.test(upi)) {
-        message.textContent = "❌ Please enter a valid UPI ID.";
+      if (upi.trim() === "" || whatsapp.trim() === "") {
+        alert("Please fill all fields");
         return;
       }
 
-      message.textContent = "✅ UPI ID submitted! Redirecting to app...";
-
-      // Delay then redirect to app link
-      setTimeout(() => {
-        // Replace below with your real app link 👇
-        window.location.href = "https://play.google.com/store/apps/details?id=com.example.app";
-      }, 2000);
+      alert("Thank you! Now you will be redirected to the app.");
+      
+      // Redirect to the app (replace this link later)
+      window.location.href = "https://play.google.com"; // <== Replace with your actual app link
     }
   </script>
 </body>
