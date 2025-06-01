@@ -3,65 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SUN CRYPTO - Refer & Earn</title>
+  <title>SUN CRYPTO - Refer & Earn ₹300</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: #f0f2f5;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      padding: 20px;
     }
+
     .container {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      max-width: 380px;
+      background: #ffffff10;
+      border: 2px solid #ffffff22;
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      padding: 30px 25px;
+      max-width: 400px;
+      width: 100%;
       text-align: center;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      animation: slideUp 0.6s ease-out;
     }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
     .logo {
-      width: 70px;
-      margin-bottom: 10px;
+      width: 80px;
+      border-radius: 50%;
+      background: white;
+      padding: 10px;
+      margin-bottom: 15px;
     }
+
     h1 {
-      font-size: 24px;
-      margin: 5px 0;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #ffffff;
     }
+
+    .highlight {
+      color: #00ffcc;
+      font-weight: bold;
+    }
+
     p {
-      margin: 8px 0;
-      color: #333;
+      margin: 10px 0;
+      font-size: 16px;
     }
+
     input {
       width: 100%;
-      padding: 12px;
+      padding: 12px 15px;
       margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      background: #ffffffee;
+      color: #000;
     }
+
     button {
       width: 100%;
-      padding: 12px;
-      background: #007bff;
-      color: white;
+      padding: 14px;
       font-size: 16px;
+      margin-top: 10px;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
       border: none;
-      border-radius: 8px;
+      border-radius: 12px;
+      color: white;
+      font-weight: bold;
       cursor: pointer;
+      transition: 0.3s;
     }
+
     button:hover {
-      background: #0056b3;
+      background: linear-gradient(to right, #0072ff, #00c6ff);
+      transform: scale(1.02);
     }
+
     .steps {
       text-align: left;
-      font-size: 14px;
       margin-top: 20px;
-      color: #444;
+      font-size: 14px;
+      color: #dcdcdc;
     }
+
+    .steps ol {
+      padding-left: 20px;
+    }
+
     .steps li {
       margin-bottom: 10px;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #ccc;
     }
   </style>
 </head>
@@ -69,23 +128,28 @@
   <div class="container">
     <img src="https://i.imgur.com/s4j8kRQ.png" alt="Logo" class="logo" />
     <h1>SUN CRYPTO</h1>
-    <p><strong>GET ₹300 INSTANTLY</strong></p>
+    <p class="highlight">GET ₹300 INSTANTLY</p>
     <p>Refer Code: <strong id="refCode">2157128</strong></p>
 
-    <input type="text" id="upi" placeholder="Enter your UPI ID" required />
-    <input type="text" id="whatsapp" placeholder="Enter your WhatsApp number" required />
+    <input type="text" id="upi" placeholder="Enter your UPI ID" />
+    <input type="text" id="whatsapp" placeholder="Enter your WhatsApp number" />
     
-    <button onclick="submitForm()">Submit</button>
+    <button onclick="submitForm()">Claim ₹300 Now</button>
 
     <div class="steps">
-      <p><strong>How to earn ₹300?</strong></p>
+      <p><strong>Follow These Steps:</strong></p>
       <ol>
-        <li>Enter your UPI ID and WhatsApp number.</li>
-        <li>Click Submit and install the SUN CRYPTO app.</li>
-        <li>Complete your profile and KYC verification.</li>
-        <li>Do at least ₹10 small trade.</li>
-        <li>You will receive ₹300 cashback instantly.</li>
+        <li>Enter your UPI ID and WhatsApp number above.</li>
+        <li>Click "Claim ₹300 Now" button.</li>
+        <li>Install the SUN CRYPTO app.</li>
+        <li>Complete your profile & KYC verification.</li>
+        <li>Do a small trade (₹10 or more).</li>
+        <li>Get ₹300 directly to your UPI!</li>
       </ol>
+    </div>
+
+    <div class="footer">
+      &copy; 2025 SUN CRYPTO. All rights reserved.
     </div>
   </div>
 
@@ -94,12 +158,12 @@
       const upi = document.getElementById("upi").value;
       const whatsapp = document.getElementById("whatsapp").value;
 
-      if (upi.trim() === "" || whatsapp.trim() === "") {
-        alert("Please fill all fields");
+      if (!upi.trim() || !whatsapp.trim()) {
+        alert("Please enter both UPI ID and WhatsApp number.");
         return;
       }
 
-      alert("Thank you! Now you will be redirected to the app.");
+      alert("Thanks! Redirecting you to the SUN CRYPTO app now.");
       window.location.href = "https://join.suncrypto.in/2157128/refer";
     }
   </script>
