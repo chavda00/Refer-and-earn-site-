@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Refer & Earn ₹50</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #56ccf2, #2f80ed);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      background: #ffffff22;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+    input[type="text"] {
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #fff;
+      color: #2f80ed;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #f2f2f2;
+    }
+    .message {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #fffa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🎉 Refer & Earn ₹50</h2>
+    <p>Enter your UPI ID to get started</p>
+    <input type="text" id="upiInput" placeholder="example@upi" />
+    <button onclick="submitUPI()">Get ₹50</button>
+    <p class="message" id="message"></p>
+  </div>
+
+  <script>
+    function submitUPI() {
+      const upi = document.getElementById('upiInput').value.trim();
+      const message = document.getElementById('message');
+
+      // Simple UPI ID validation
+      const upiRegex = /^[\w.-]+@[\w.-]+$/;
+
+      if (!upiRegex.test(upi)) {
+        message.textContent = "❌ Please enter a valid UPI ID.";
+        return;
+      }
+
+      message.textContent = "✅ UPI ID submitted! Redirecting to app...";
+
+      // Delay then redirect to app link
+      setTimeout(() => {
+        // Replace below with your real app link 👇
+        window.location.href = "https://play.google.com/store/apps/details?id=com.example.app";
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
